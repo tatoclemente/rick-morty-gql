@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.btn-primary {
+  @apply flex items-center justify-center bg-slate-900 rounded-md text-slate-200 py-1 px-3
+}
