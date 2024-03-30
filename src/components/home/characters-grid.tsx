@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
-import { GET_CHARACTERS } from "../../characters/graphql-queries";
+import { GET_CHARACTERS } from "../../gql/characters/graphql-queries";
 import { ResponseCharactersHome } from "../../interfaces";
-import { CharacterCard, Pagination } from "..";
+import { CharacterCard, Pagination, Spinner } from "..";
 import { useState } from "react";
 
 export const CharactersGrid = () => {
@@ -11,15 +11,21 @@ export const CharactersGrid = () => {
   const { loading, error, data, refetch } = useQuery(GET_CHARACTERS, {
     variables: {
       page: currentPage,
-      filter: {
-        name: "mor",
-      },
+      // filter: {
+      //   name: "mor",
+      // },
     },
   });
 
 
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spinner />
+      </div>
+    )
+  };
   if (error) return <p>Error : {error.message}</p>;
 
   return (
