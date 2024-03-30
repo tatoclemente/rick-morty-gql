@@ -1,5 +1,8 @@
 
 import { scrollToTop } from "../utils/scroll-to-top";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import clsx from "clsx";
+import { useEffect } from "react";
 
 
 interface Props {
@@ -16,20 +19,53 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
       setCurrentPage(currentPage + 1);
     }
     refetch({ page: currentPage })
-    scrollToTop({ smooth: true })
   }
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
     refetch({ page: currentPage })
-    scrollToTop({ smooth: true })
   }
+
+  useEffect(() => {
+    scrollToTop({ smooth: true });
+  }, [currentPage]);
+
   return (
-    <div className="flex w-full justify-center items-center gap-2 mx-auto">
-      <button className="btn-primary text-xl" onClick={handlePrevPage}>Prev</button>
+    <div className="flex w-full justify-center items-center gap-4 mx-auto">
+      <button
+        disabled={ currentPage === 1 } 
+        className={
+          clsx(
+            "text-2xl",
+            {
+              "btn-primary": currentPage > 1,
+              "btn-disabled": currentPage <= 1,
+            }
+          )
+        }
+        onClick={handlePrevPage}
+      >
+        <IoIosArrowBack />
+      </button>
+
       <p>Page {currentPage} of { pages} </p>
-      <button className="btn-primary text-xl" onClick={handleNextPage}>Next</button>
+      
+      <button 
+        disabled={ currentPage === pages }
+        className={
+          clsx(
+            "text-2xl",
+            {
+              "btn-primary": currentPage < pages,
+              "btn-disabled": currentPage === pages,
+            }
+          )
+        } 
+        onClick={handleNextPage}
+      >
+        <IoIosArrowForward />
+      </button>
     </div>
   )
 }
