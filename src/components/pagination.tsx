@@ -32,7 +32,7 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
   }, [currentPage]);
 
   return (
-    <div className="flex w-full justify-center items-center gap-4 mx-auto">
+    <div className="flex w-full justify-center items-center gap-4 mx-auto my-10">
       <button
         disabled={ currentPage === 1 } 
         className={

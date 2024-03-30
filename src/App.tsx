@@ -10,9 +10,7 @@ const App = () => {
   return (
     <main className="w-full h-screen justify-center">
 
-      <Navbar />
-      <h1 className="text-4xl font-semibold">Hola Rick & Morty</h1>
-      
+      <Navbar />      
       <CharactersGrid />
       
     </main>
