@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { Filter } from "../interfaces";
+import { scrollToTop } from "../utils/scroll-to-top";
 
 interface AppContextType {
     currentPage: number;
@@ -20,6 +21,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode}) => {
   })
 
   const resetFilters = () => {
+    scrollToTop({ smooth: true })
     setFilter({
       status: '',
       species: '',
