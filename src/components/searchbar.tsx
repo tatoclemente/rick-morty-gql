@@ -18,7 +18,7 @@ export const Searchbar = () => {
   }
 
   return (
-    <div className="w-[40%] h-10 relative">
+    <div className="w-[95%] sm:w-[100%] h-10 relative">
       <input 
         value={ filter.name }
         placeholder="¡Find your favorite character!"

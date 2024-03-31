@@ -3,6 +3,7 @@
 
 export * from './navbar'
 export * from './searchbar'
+export * from './modal-search'
 export * from './pagination'
 export * from './spinner'
 export * from './not-found'

@@ -5,10 +5,12 @@ export const CharacterCard = ({ id, name, image }: ResponseCharactersHome) => {
   
   return (
     <div
-    className='mx-auto'
+      className='mx-auto relative rounded-lg overflow-hidden'
       onClick={() => console.log(id)}
     >
-      <h3>{name}</h3>
+      <div className='absolute'>
+        <h3 className=''>{ name }</h3>
+      </div>
       <img
         width="300"
         height="300"
