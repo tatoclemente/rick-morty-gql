@@ -45,7 +45,7 @@ export const CharactersGrid = () => {
       />
 
       {data.characters.results.length === 0 && <NotFound />}
-      <div className="flex w-full justify-end pr-10">
+      <div className="flex w-full">
         {data.characters.results.length > 0 && (
           <Pagination
             currentPage={currentPage}
@@ -55,7 +55,7 @@ export const CharactersGrid = () => {
           />
         )}
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 m-4 max-w-full">
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 m-4 max-w-[1400px] mx-auto px-4">
         {data.characters.results.map((character: ResponseCharactersHome) => (
           <CharacterCard
             key={character.id}
