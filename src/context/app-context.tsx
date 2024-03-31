@@ -18,6 +18,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode}) => {
     status: '',
     species: '',
     gender: '',
+    name: '',
   })
 
   const resetFilters = () => {
@@ -26,6 +27,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode}) => {
       status: '',
       species: '',
       gender: '',
+      name: '',
     })
   }
 
