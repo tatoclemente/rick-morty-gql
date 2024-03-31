@@ -2,6 +2,7 @@
 
 
 export * from './navbar'
+export * from './searchbar'
 export * from './pagination'
 export * from './spinner'
 export * from './not-found'

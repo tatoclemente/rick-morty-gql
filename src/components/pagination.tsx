@@ -31,6 +31,36 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
     scrollToTop({ smooth: true });
   }, [currentPage]);
 
+
+
+  const renderPageButtons = () => {
+    const maxVisiblePages = 3;
+    const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2);
+    let startPage = Math.max(1, currentPage - halfMaxVisiblePages);
+    let endPage = Math.min(startPage + maxVisiblePages - 1, pages);
+
+    if (currentPage <= halfMaxVisiblePages) {
+      endPage = Math.min(maxVisiblePages, pages);
+    } else if (currentPage >= pages - halfMaxVisiblePages) {
+      startPage = Math.max(1, pages - maxVisiblePages + 1);
+    }
+
+    return Array.from({ length: endPage - startPage + 1 }, (_, index) => index + startPage).map(
+      (page: number) => (
+        <button
+          key={page}
+          className={clsx("px-3 py-1 rounded-full", {
+            "bg-lime-300 text-slate-900": page === currentPage,
+            "text-slate-200": page !== currentPage,
+          })}
+          onClick={() => setCurrentPage(page)}
+        >
+          {page}
+        </button>
+      )
+    );
+  };
+
   return (
     <div className="flex w-full justify-center items-center gap-4 mx-auto my-10">
       <button
@@ -49,7 +79,45 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
         <IoIosArrowBack />
       </button>
 
-      <p>Page {currentPage} of { pages} </p>
+     { currentPage > 2 &&
+       (
+        <>
+       <button 
+        onClick={() => setCurrentPage(1)}
+        className={
+          clsx(
+            "px-3 py-1 rounded-full text-slate-200", 
+            { 
+              "bg-lime-300 text-slate-900": 1 === currentPage,
+            }
+          )}
+       >1</button>
+       ...
+        </>
+       ) 
+    }
+      { renderPageButtons() }
+      {
+        pages > 4 && currentPage < pages - 1 && (
+          <>
+            ...
+            <button 
+              onClick={() => setCurrentPage(pages)}
+              className={
+                clsx(
+                  "px-3 py-1 rounded-full", 
+                  { 
+                    "bg-lime-300 text-slate-900": pages === currentPage,
+                    "text-slate-200": pages !== currentPage,
+                  }
+                )} 
+            >{ pages }</button>
+          </>
+        )
+      }
+
+
+      {/* <p className="bg-lime-300 px-3 py-1 rounded-full text-slate-900">Page {currentPage} of { pages} </p> */}
       
       <button 
         disabled={ currentPage === pages }
