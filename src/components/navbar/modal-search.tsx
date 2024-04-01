@@ -20,7 +20,7 @@ export const ModalSearch = () => {
       </button>
       <div ref={ref} className={
         clsx(
-          "absolute z-50 rounded-full top-[90px] left-[50%] translate-x-[-50%] w-[90vw] py-2 flex items-center justify-center bg-lime-500 shadow-3xl-dark transition-transform",
+          "modal-search",
           {
             'scale-0': !showModal,
             'scale-100': showModal,

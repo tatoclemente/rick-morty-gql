@@ -14,5 +14,6 @@ export * from './home/character-card'
 export * from './home/filtered-section'
 
 export * from './detail/detail'
+export * from './detail/character-info'
 
 
