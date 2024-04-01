@@ -1,19 +1,19 @@
-
-import { LuFilterX } from 'react-icons/lu'
-import rickAndMortyPic from '../../assets/rick-and-morty.webp'
 import { useContext } from 'react'
-import AppContext from '../../context/app-context'
-import { AnimatedLink, ModalSearch, Searchbar } from '..'
 import { useLocation } from 'wouter'
-import { IoArrowBack, IoHomeOutline } from 'react-icons/io5'
 import clsx from 'clsx'
+import { LuFilterX } from 'react-icons/lu'
+import { IoArrowBack, IoHomeOutline } from 'react-icons/io5'
+
+import { AnimatedLink, ModalSearch, Searchbar } from '..'
+import AppContext from '../../context/app-context'
+import rickAndMortyPic from '../../assets/rick-and-morty.webp'
 
 
 export const Navbar = () => {
 
   const { resetFilters } = useContext(AppContext)!
 
-  const [location, navigate] = useLocation()
+  const [location] = useLocation()
 
   
   const detailPage = location.includes('/detail/')
@@ -44,7 +44,6 @@ export const Navbar = () => {
           <ModalSearch />
         )
       }
-
 
       {
         !detailPage 

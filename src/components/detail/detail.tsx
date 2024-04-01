@@ -1,7 +1,8 @@
-import { useQuery } from "@apollo/client";
 import { useRoute } from "wouter";
+import { useQuery } from "@apollo/client";
+import { CharacterInfo, Spinner } from "..";
 import { GET_CHARACTER_BY_ID } from "../../gql/graphql-queries";
-import { Spinner } from "..";
+import bgStars from '../../assets/bg-stars-1x1.webp'
 
 
 export const Detail = () => {
@@ -25,43 +26,17 @@ export const Detail = () => {
   
 
   return (
-    <main 
-      className="bg-cover bg-stars w-full h-full">
-      <div className="bg-slate-900 bg-opacity-50 w-full h-full pt-[100px] pb-4 sm:pt-[80px] text-slate-200 flex flex-col sm:flex-row gap-4 items-center justify-center px-4">
-      <div className="rounded-lg overflow-hidden border-slate-950 border-4">
-        <img width={500} height={500} className="h-96 w-96 max-w-full max-h-full object-cover" src={ data.character.image } alt="" />
-      </div>
-      <div className="text-lime-500 bg-slate-950 h-72 sm:h-96 w-96 max-w-full p-4 space-y-10 rounded-lg border-2 border-lime-500">
-        <h1 className="text-2xl font-bold text-slate-200">{ data.character.name }</h1>
-        <aside className="text-base sm:text-lg">
-          <span className="flex">
-            <p className="text-slate-200 min-w-[80px]">Status: </p> 
-            { data.character.status }
-          </span>
-          <span className="flex">
-            <span className="text-slate-200 min-w-[80px]">Specie: </span> 
-            { data.character.species }
-          </span>
-          <span className="flex">
-            <p className="text-slate-200 min-w-[80px]">Gender: </p> 
-            { data.character.gender }
-            </span>
-          <span className="flex">
-            <p className="text-slate-200 min-w-[80px]">Type: </p> 
-            { data.character.type ? data.character.type : "unknown" }
-          </span>
-          <span className="flex">
-            <p className="text-slate-200 min-w-[80px]">Origin: </p> 
-            { data.character.origin.name }
-          </span>
-          <span className="flex">
-            <p className="text-slate-200 min-w-[80px]">Location: </p> 
-            { data.character.location.name }
-          </span>
-        </aside>
-      </div>
-      </div>
+      <main className="detail-container">
+        <div className="absolute z-[-1] w-[300%] sm:[170%] xl:w-[120%] h-[120%] sm:h-[150%] xl:h-[250%]">
+          <img src={bgStars} alt="" className="h-full w-full object-cover animate-wiggle" />
+        </div>
       
-    </main>
+        <div className="rounded-lg overflow-hidden border-lime-500 border-2 shadow-2xl-dark">
+          <img width={500} height={500} className="h-96 w-96 max-w-full max-h-full object-cover" src={ data.character.image } alt="" />
+        </div>
+
+        <CharacterInfo data={ data.character } />
+
+      </main>
   )
 }

@@ -20,5 +20,6 @@ export interface Character {
   type?: string;
   gender?: string;
   origin?: Origin
+  location?: Origin
 }
 
