@@ -1,8 +1,8 @@
 import clsx from "clsx"
 import { useRef } from "react"
 import { IoSearchOutline } from "react-icons/io5"
-import { useClickOutSide } from "../hooks/use-click-outside"
-import { Searchbar } from "."
+import { useClickOutSide } from "../../hooks/use-click-outside"
+import { Searchbar } from ".."
 
 
 export const ModalSearch = () => {

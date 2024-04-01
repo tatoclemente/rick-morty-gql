@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useQuery } from "@apollo/client";
 
-import { GET_CHARACTERS } from "../../gql/characters/graphql-queries";
+import { GET_CHARACTERS } from "../../gql/graphql-queries";
 import {
   CharacterCard,
   FilteredSection,
@@ -14,8 +14,7 @@ import type { ResponseCharactersHome } from "../../interfaces";
 import AppContext from "../../context/app-context";
 
 export const CharactersGrid = () => {
-  const { currentPage, setCurrentPage, filter, setFilter } =
-    useContext(AppContext)!;
+  const { currentPage, setCurrentPage, filter, setFilter } = useContext(AppContext)!;
   const { loading, error, data, refetch } = useQuery(GET_CHARACTERS, {
     variables: {
       page: currentPage,
@@ -34,7 +33,7 @@ export const CharactersGrid = () => {
 
   return (
     <section className="py-10 pt-[80px] bg-slate-800 text-white min-h-screen">
-      <h1 className="text-xl text-center font-semibold mt-6  italic">
+      <h1 className="text-xl text-center font-semibold mt-6 mx-4 italic">
         <span className="text-4xl">Welcome</span> to the universe of{" "}
         <span className="text-4xl text-lime-500">Rick & Morty</span>
       </h1>

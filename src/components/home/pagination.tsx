@@ -1,5 +1,5 @@
 
-import { scrollToTop } from "../utils/scroll-to-top";
+import { scrollToTop } from "../../utils/scroll-to-top";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import clsx from "clsx";
 import { useEffect } from "react";

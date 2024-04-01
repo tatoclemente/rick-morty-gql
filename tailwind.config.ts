@@ -11,6 +11,9 @@ export default {
       },
       boxShadow: {
         '3xl-dark': '0 5px 30px rgba(132, 204, 22, .5)',
+      },
+      backgroundImage: {
+        "stars": "url('./assets/bg-stars.webp')"
       }
     },
   },
