@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useQuery } from "@apollo/client";
 
-import { GET_CHARACTERS } from "../../gql/characters/graphql-queries";
+import { GET_CHARACTERS } from "../../gql/graphql-queries";
 import {
   CharacterCard,
   FilteredSection,
@@ -14,8 +14,7 @@ import type { ResponseCharactersHome } from "../../interfaces";
 import AppContext from "../../context/app-context";
 
 export const CharactersGrid = () => {
-  const { currentPage, setCurrentPage, filter, setFilter } =
-    useContext(AppContext)!;
+  const { currentPage, setCurrentPage, filter, setFilter } = useContext(AppContext)!;
   const { loading, error, data, refetch } = useQuery(GET_CHARACTERS, {
     variables: {
       page: currentPage,

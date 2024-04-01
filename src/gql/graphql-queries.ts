@@ -20,3 +20,24 @@ export const GET_CHARACTERS = gql`
   }
 
 `
+
+
+export const GET_CHARACTER_BY_ID = gql`
+  query GetCharacterById($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      image
+      species
+      status
+      gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
+    } 
+  }
+
+`

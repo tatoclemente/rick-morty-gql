@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import AppContext from "../context/app-context"
+import AppContext from "../../context/app-context"
 import { IoSearchOutline } from "react-icons/io5"
 
 
