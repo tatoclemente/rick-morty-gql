@@ -53,9 +53,9 @@ export const Navbar = () => {
               <button onClick={ resetFilters } className='btn-primary gap-2'><LuFilterX /> Reset Filters</button>
             </div>
           ) : (
-            <div>
-              <button onClick={ () => navigate('/') } className='btn-primary gap-2'><IoArrowBack /><IoHomeOutline /> Volver</button>
-            </div>
+            <AnimatedLink className='cursor-pointer' to='/'>
+              <span className='btn-primary gap-2'><IoArrowBack /><IoHomeOutline /> Volver</span>
+            </AnimatedLink>
           )
       }
     </nav>
