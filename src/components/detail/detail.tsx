@@ -22,44 +22,46 @@ export const Detail = () => {
     );
   }
   if (error) return <p>Error : {error.message}</p>;
-
-  console.log(data);
   
 
   return (
-    <main className="bg-slate-900 w-full h-full pt-[80px] text-slate-200 flex gap-4 items-center justify-center">
+    <main 
+      className="bg-cover bg-stars w-full h-full">
+      <div className="bg-slate-900 bg-opacity-50 w-full h-full pt-[100px] pb-4 sm:pt-[80px] text-slate-200 flex flex-col sm:flex-row gap-4 items-center justify-center px-4">
       <div className="rounded-lg overflow-hidden border-slate-950 border-4">
-        <img width={500} height={500} className="h-96 w-96" src={ data.character.image } alt="" />
+        <img width={500} height={500} className="h-96 w-96 max-w-full max-h-full object-cover" src={ data.character.image } alt="" />
       </div>
-      <div className="text-lime-500 bg-slate-950 h-96 w-96 p-4 space-y-10 rounded-lg border-2 border-lime-500">
+      <div className="text-lime-500 bg-slate-950 h-72 sm:h-96 w-96 max-w-full p-4 space-y-10 rounded-lg border-2 border-lime-500">
         <h1 className="text-2xl font-bold text-slate-200">{ data.character.name }</h1>
-        <aside>
-          <span className="text-lg flex">
+        <aside className="text-base sm:text-lg">
+          <span className="flex">
             <p className="text-slate-200 min-w-[80px]">Status: </p> 
             { data.character.status }
           </span>
-          <span className="text-lg flex">
+          <span className="flex">
             <span className="text-slate-200 min-w-[80px]">Specie: </span> 
             { data.character.species }
           </span>
-          <span className="text-lg flex">
+          <span className="flex">
             <p className="text-slate-200 min-w-[80px]">Gender: </p> 
             { data.character.gender }
             </span>
-          <span className="text-lg flex">
+          <span className="flex">
             <p className="text-slate-200 min-w-[80px]">Type: </p> 
             { data.character.type ? data.character.type : "unknown" }
           </span>
-          <span className="text-lg flex">
+          <span className="flex">
             <p className="text-slate-200 min-w-[80px]">Origin: </p> 
             { data.character.origin.name }
           </span>
-          <span className="text-lg flex">
+          <span className="flex">
             <p className="text-slate-200 min-w-[80px]">Location: </p> 
             { data.character.location.name }
           </span>
         </aside>
       </div>
+      </div>
+      
     </main>
   )
 }

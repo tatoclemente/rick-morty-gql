@@ -23,7 +23,7 @@ export const Searchbar = () => {
         value={ filter.name }
         placeholder="¡Find your favorite character!"
         onChange={ handleSearch }
-        className="border-slate-900 border-2 rounded-full w-full h-full px-4 bg-lime-50" type="search" 
+        className="border-slate-900 border-2 rounded-full w-full h-full px-4 bg-lime-50 outline-none" type="search" 
       />
       <div 
         className="absolute right-0 rounded-e-full top-1/2 -translate-y-1/2 bg-slate-900 h-full w-12 flex items-center justify-center"
