@@ -24,10 +24,15 @@ export default {
         wiggle: {
           '0%': { transform: 'rotate(5deg)' },
           '100%': { transform: 'rotate(360deg)' },
+        },
+        'ping-pong': {
+          '0%': { transform: 'translateY(-1%)' },
+          '50%': { transform: 'translateY(1%)' },
         }
       },
       animation: {
         wiggle: 'wiggle 1500s linear infinite',
+        'ping-pong': 'ping-pong 5s ease-in-out alternate infinite',
       }
     },
   },

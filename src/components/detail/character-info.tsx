@@ -7,7 +7,7 @@ interface Props {
 
 export const CharacterInfo = ({ data }: Props) => {
   return (
-    <div className="text-lime-500 bg-slate-950 bg-opacity-65 h-auto sm:h-96 w-96 sm:min-w-96 max-w-full p-4 space-y-4 rounded-lg border-2 border-lime-500">
+    <div className="text-lime-500 bg-slate-950 bg-opacity-65 h-auto sm:h-96 w-96 sm:min-w-96 max-w-full p-4 space-y-4 rounded-lg border-2 border-lime-500 animate-ping-pong">
     <h1 className="text-2xl font-bold text-slate-200">{ data.name }</h1>
     <aside className="text-base sm:text-lg">
       <span className="flex">
