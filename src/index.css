@@ -6,7 +6,7 @@
 .btn-primary {
   @apply 
     flex items-center justify-center bg-slate-900 
-    rounded-md text-lime-500 py-1 px-2 sm:px-3 
+    rounded-md text-lime-500 py-1.5 px-2 sm:px-3 
   hover:bg-slate-950 transition-colors text-sm sm:text-base
 }
 
@@ -39,4 +39,15 @@
     absolute z-50 rounded-full top-[90px] left-[50%] translate-x-[-50%] 
     w-[90vw] py-2 flex items-center justify-center bg-lime-500 
     shadow-3xl-dark transition-transform
+}
+
+.logo-transition {
+  view-transition-name: logo-image;
+}
+
+::view-transition-old(logo-image) {
+  animation-duration: 1s;
+}
+::view-transition-new(logo-image) {
+  animation-duration: 1s;
 }

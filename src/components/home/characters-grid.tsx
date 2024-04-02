@@ -54,7 +54,7 @@ export const CharactersGrid = () => {
           />
         )}
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 m-4 max-w-[1400px] mx-auto px-4">
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-[1400px] mx-auto px-4">
         {data.characters.results.map((character: ResponseCharactersHome) => (
           <CharacterCard
             key={character.id}
