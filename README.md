@@ -19,12 +19,12 @@ Esta es una Single Page Application (SPA) que utiliza la API de Rick and Morty c
 
 ## Deployment
 
-### En AWS S3 
+### En AWS S3 [http://rick-and-morty-gql.s3-website.us-east-2.amazonaws.com](http://rick-and-morty-gql.s3-website.us-east-2.amazonaws.com)
 
 En primera instancia, decidí desplegar en AWS a través de un bucket S3. Cabe destacar que esta fue mi primera experiencia desplegando de esta manera. En general, encontré el proceso bastante sencillo y parece ser una buena alternativa. 
 Sin embargo, no logré incorporar un certificado SSL, lo cual habría sido deseable.
 
-### En Vercel
+### En Vercel [https://rick-and-morty-gql-five.vercel.app](https://rick-and-morty-gql-five.vercel.app)
 
 Finalmente, decidí también desplegar en Vercel, ya que esta empresa proporciona un certificado SSL gratuito y de manera automática.
 Otra ventaja de este servicio es que está sincronizado con el respositorio remoto, por lo tanto los cambios que se suben a la rama `main`, en este caso, impactan automáticamente en producción.
