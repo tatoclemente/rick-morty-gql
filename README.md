@@ -27,9 +27,15 @@ Sin embargo, no logré incorporar un certificado SSL, lo cual habría sido desea
 ### En Vercel
 
 Finalmente, decidí también desplegar en Vercel, ya que esta empresa proporciona un certificado SSL gratuito y de manera automática.
+Otra ventaja de este servicio es que está sincronizado con el respositorio remoto, por lo tanto los cambios que se suben a la rama `main`, en este caso, impactan automáticamente en producción.
 
 ## Autor
 
 Gustavo Clemente
+
+🌐 [tatoclemente.dev](https://tatoclemente.dev)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=LinkedIn&logoColor=white&labelColor=101010)](https://linkedin.com/in/tatoclemente/)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?logo=Gmail&logoColor=white&labelColor=101010)](mailto:soytatoclemente@gmail.com?Subject=Contacto%20por%20colaboración)
 
 
