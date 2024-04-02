@@ -49,9 +49,9 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
       (page: number) => (
         <button
           key={page}
-          className={clsx("px-3 py-1 rounded-full", {
+          className={clsx("px-[11px] sm:px-3 py-1 rounded-full transition-all", {
             "bg-lime-300 text-slate-900": page === currentPage,
-            "text-slate-200": page !== currentPage,
+            "text-slate-200 hover:sm:text-lime-500 hover:sm:scale-[1.05]": page !== currentPage,
           })}
           onClick={() => setCurrentPage(page)}
         >
@@ -86,9 +86,10 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
         onClick={() => setCurrentPage(1)}
         className={
           clsx(
-            "px-3 py-1 rounded-full text-slate-200", 
+            "px-3 py-1 rounded-full text-slate-200 transition-al", 
             { 
               "bg-lime-300 text-slate-900": 1 === currentPage,
+              "hover:sm:text-lime-500 hover:sm:scale-[1.05]": 1 !== currentPage,
             }
           )}
        >1</button>
@@ -105,10 +106,10 @@ export const Pagination = ({ currentPage, setCurrentPage, refetch, pages  }: Pro
               onClick={() => setCurrentPage(pages)}
               className={
                 clsx(
-                  "px-3 py-1 rounded-full", 
+                  "px-3 py-1 rounded-full transition-all", 
                   { 
                     "bg-lime-300 text-slate-900": pages === currentPage,
-                    "text-slate-200": pages !== currentPage,
+                    "text-slate-200 hover:sm:text-lime-500 hover:sm:scale-[1.05]": pages !== currentPage,
                   }
                 )} 
             >{ pages }</button>

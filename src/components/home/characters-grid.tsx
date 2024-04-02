@@ -32,7 +32,7 @@ export const CharactersGrid = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return (
-    <section className="py-10 pt-[80px] bg-slate-800 text-white min-h-screen">
+    <section className="py-10 pt-[80px] bg-slate-950 text-white min-h-screen">
       <h1 className="text-xl text-center font-semibold mt-6 mx-4 italic">
         <span className="text-4xl">Welcome</span> to the universe of{" "}
         <span className="text-4xl text-lime-500">Rick & Morty</span>

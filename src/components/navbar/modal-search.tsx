@@ -15,7 +15,7 @@ export const ModalSearch = () => {
     <div className="sm:hidden">
       <button 
       onClick={() => setShowModal(!showModal)}
-      className='flex sm:hidden justify-center items-center w-8 h-8 rounded-full bg-slate-900 text-lime-500'>
+      className='flex sm:hidden justify-center items-center w-8 h-8 rounded-full bg-slate-800 text-lime-500'>
         <IoSearchOutline />
       </button>
       <div ref={ref} className={
