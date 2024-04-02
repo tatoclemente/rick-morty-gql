@@ -1,4 +1,4 @@
-import {Route, Switch } from "wouter";
+import { Route, Switch } from "wouter";
 import { CharactersGrid, Detail, Navbar } from "./components";
 
 
@@ -12,6 +12,7 @@ const App = () => {
         <Route path="/" component={ CharactersGrid } />
         <Route path="/detail/:id" component={ Detail } />
       </Switch>      
+      
     </main>
   )
 }
