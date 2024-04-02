@@ -41,6 +41,7 @@ export const CharactersGrid = () => {
       <FilteredSection
         filter={filter}
         setFilter={setFilter}
+        setCurrentPage={setCurrentPage}
       />
 
       {data.characters.results.length === 0 && <NotFound />}

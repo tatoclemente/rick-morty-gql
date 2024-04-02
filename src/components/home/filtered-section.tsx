@@ -3,22 +3,26 @@ import { optionsGender, optionsSpecies, optionsStatus } from "../../utils/filter
 
 
 interface Props {
-  filter: Filter
-  setFilter: React.Dispatch<React.SetStateAction<Filter>>
+  filter: Filter;
+  setFilter: React.Dispatch<React.SetStateAction<Filter>>;
+  setCurrentPage: (page: number) => void;
 }
 
-export const FilteredSection = ({ filter, setFilter }: Props) => {
+export const FilteredSection = ({ filter, setFilter, setCurrentPage }: Props) => {
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter({ ...filter, status: event.target.value });
+    setCurrentPage(1); 
   };
   
   const handleGenderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter({ ...filter, gender: event.target.value });
+    setCurrentPage(1); 
   };
   
   const handleSpeciesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter({ ...filter, species: event.target.value });
+    setCurrentPage(1); 
   };
 
 
