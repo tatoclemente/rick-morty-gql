@@ -28,7 +28,7 @@ export const Navbar = () => {
       )
     }>
       <AnimatedLink className='cursor-pointer' to='/'>
-        <img width={60} height={60} src={ rickAndMortyPic } alt="Rick And Morty Logo" />
+        <img className='logo-transition' width={60} height={60} src={ rickAndMortyPic } alt="Rick And Morty Logo" />
       </AnimatedLink>
 
       {

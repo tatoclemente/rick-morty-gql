@@ -24,14 +24,14 @@ export const FilteredSection = ({ filter, setFilter }: Props) => {
 
 
   return (
-    <header className="max-w-full w-[900px] flex flex-col gap-4 sm:flex-row justify-between px-6 mx-auto py-6">
+    <header className="max-w-full w-[900px] flex flex-col gap-4 sm:flex-row justify-between px-6 mx-auto pt-6">
        
     <aside className="flex flex-col items-center">
       <label htmlFor="">Status</label>
       <select 
         value={ filter.status }
         onChange={ handleStatusChange }
-        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md sm:p-1 text-slate-800 bg-lime-300"
+        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md p-1 text-slate-800 bg-lime-300"
       >
         {
           optionsStatus.map(( optionStatus: Options, index: number ) => (
@@ -46,7 +46,7 @@ export const FilteredSection = ({ filter, setFilter }: Props) => {
       <select 
         value={ filter.gender }
         onChange={ handleGenderChange }
-        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md sm:p-1 text-slate-800 bg-lime-300"
+        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md p-1 text-slate-800 bg-lime-300"
       >
         {
           optionsGender.map((optionGender: Options, index: number) => (
@@ -60,7 +60,7 @@ export const FilteredSection = ({ filter, setFilter }: Props) => {
       <select
         value={ filter.species }
         onChange={ handleSpeciesChange }
-        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md sm:p-1 text-slate-800 bg-lime-300"
+        className="border-2 border-lime-500 max-w-full w-[300px] mx-2 sm:w-40 rounded-md p-1 text-slate-800 bg-lime-300"
       >
         {
           optionsSpecies.map((optionSpecies: Options, index: number) => (
