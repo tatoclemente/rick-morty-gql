@@ -1,4 +1,4 @@
-# Rick and Morty SPA con GraphQL
+lo# Rick and Morty SPA con GraphQL
 
 Esta es una Single Page Application (SPA) que utiliza la API de Rick and Morty con GraphQL. La aplicación está escrita en TypeScript para aprovechar el autocompletado y proporcionar un mayor control de errores.
 
@@ -21,13 +21,25 @@ Esta es una Single Page Application (SPA) que utiliza la API de Rick and Morty c
 
 ### En AWS S3 [http://rick-and-morty-gql.s3-website.us-east-2.amazonaws.com](http://rick-and-morty-gql.s3-website.us-east-2.amazonaws.com)
 
-En primera instancia, decidí desplegar en AWS a través de un bucket S3. Cabe destacar que esta fue mi primera experiencia desplegando de esta manera. En general, encontré el proceso bastante sencillo y parece ser una buena alternativa. 
-Sin embargo, no logré incorporar un certificado SSL, lo cual habría sido deseable.
+
+En primera instancia, decidí desplegar en AWS a través de un bucket S3. Cabe destacar que esta fue mi primera experiencia desplegando de esta manera. Por lo que me encontré con algunos inconvenientes que no logré resolver. Cuando intento acceder con la URL a una pantalla, o sea, sin usar la navegación, me lleva a una página de 404 de aws, eso significa que pierde la referencia del archivo index.html. intenté crear una función lambda que redireccione las rutas pero no logré hacer que funcione. 
+Otro problema es que no logré incorporar un certificado SSL, lo cual habría sido deseable.
+En general, al principio encontré el proceso bastante sencillo y parece ser una buena alternativa, pero se me complicó, por eso necesito capacitarme para sacarle mayor provecho.
 
 ### En Vercel [https://rick-and-morty-gql-five.vercel.app](https://rick-and-morty-gql-five.vercel.app)
 
-Finalmente, decidí también desplegar en Vercel, ya que esta empresa proporciona un certificado SSL gratuito y de manera automática.
+Finalmente, decidí desplegar en Vercel, una alternativa muy sencilla y rápida, de hecho tengo casi todos mis proyectos desplegados ahí, ya que esta empresa proporciona un dominio con certificado SSL gratuito y de manera automática.
 Otra ventaja de este servicio es que está sincronizado con el respositorio remoto, por lo tanto los cambios que se suben a la rama `main`, en este caso, impactan automáticamente en producción.
+En Vercel también me encontré con el problema de la referencia al index.html pero lo solucioné creando un archivo vercel.json dónde hice la reescritura de las rutas. 
+
+`{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}`
+
+No estoy seguro pero creo que como estoy usando `Wouter` para el enrutado, quizás eso genere este inconveniente. 
+Con `react-router-dom` esto no sucede.
 
 ## Autor
 
