@@ -1,4 +1,4 @@
-lo# Rick and Morty SPA con GraphQL
+# Rick and Morty SPA con GraphQL
 
 Esta es una Single Page Application (SPA) que utiliza la API de Rick and Morty con GraphQL. La aplicación está escrita en TypeScript para aprovechar el autocompletado y proporcionar un mayor control de errores.
 
