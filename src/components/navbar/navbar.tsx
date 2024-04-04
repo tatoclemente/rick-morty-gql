@@ -53,7 +53,7 @@ export const Navbar = () => {
             </div>
           ) : (
             <AnimatedLink className='cursor-pointer' to='/'>
-              <span className='btn-primary gap-2'><IoArrowBack /><IoHomeOutline /> Volver</span>
+              <span className='btn-primary gap-2'><IoArrowBack /><IoHomeOutline /> Back</span>
             </AnimatedLink>
           )
       }
